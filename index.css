@@ -1,0 +1,41 @@
+body{
+  margin:2rem 5rem;
+  color:white;
+  background:rgb(44, 24, 2);
+}
+
+div{
+  border: solid white;
+  border-radius: 3rem;
+  margin:0;
+  padding:1rem 3rem;
+  width:80vw;
+  background:rgb(27, 75, 33);
+}
+
+h1{
+  font-size:3rem;
+  text-align:center;
+}
+p:nth-child(2){
+  font-size:1.5rem;
+}
+
+p:nth-child(3){
+  font-size:.8rem;
+  margin: -1rem 0rem 3rem;
+  font-style: italic ;
+}
+ul{
+  padding:1rem 1rem;
+  font-size:1.1rem;
+}
+li{
+  margin-top:1rem;
+  text-decoration: underline;
+}
+
+.done{
+    text-decoration:line-through;
+    color:#555;
+}

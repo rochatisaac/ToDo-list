@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+
+    <title>To Do list</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Isaac">
+    <meta name="description" content="Atividade ">
+    <meta name="keywords" content="html5, tecnologia">
+    <meta name="viewport" content="width=device-width">
+    <link href="index.css" rel="stylesheet">
+
+  </head>
+  
+  <body>
+    <div>
+      <h1>ToDo List</h1>
+      <p>Tarefas do dia:</p>
+      <p>(clique nas atividades cumpridas)</p>
+
+      <input type="textbox" id ="txtTask">
+      <button id="btn">Adicionar à lista</button>
+      <ul>
+          <li>Lavar pratos</li>
+          <li>Alimentar gatos</li>
+          <li>Varrer casa</li>
+          <li>Estudar JavaScript</li>
+          <li>Preparar o almoço</li>
+      </ul>
+    </div>
+
+
+    <script>
+        (function(){
+           "use strict";
+            
+            var $ul = document.querySelector("ul");
+            var $lis = $ul.querySelectorAll("li");
+            var $txtTask = document.querySelector("#txtTask");
+            var $btn = document.querySelector("#btn");
+
+            $btn.addEventListener("click", addTask);
+            $txtTask.addEventListener("keyup", function(e){
+                if(e.keyCode === 13){
+                addTask();
+                }
+            });
+
+            $ul.addEventListener("click",function(e){
+                if(e.target.nodeName === "LI"){
+                    removeTask(e.target);
+                }
+            });
+
+            function removeTask(li){
+                if(confirm("Deseja realmente excluir a tarefa \n"+ li.textContent+"?")){
+                    li.parentNode.removeChild(li);
+                }
+                
+            }
+            
+            function addTask(){
+                                
+                var li = document.createElement("li");
+                var text = document.createTextNode($txtTask.value);
+
+                if(!$txtTask.value){
+                    return;
+                }
+
+                li.appendChild(text);
+
+                $ul.appendChild(li);
+                
+                $txtTask.value="";
+                $txtTask.focus();
+            };
+
+
+            
+
+        })()
+
+    </script>
+
+        
+    
+  </body>
+
+</html>
