@@ -33,6 +33,7 @@ ul{
 li{
   margin-top:1rem;
   text-decoration: underline;
+  width:25vw;
 }
 
 .done{
